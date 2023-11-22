@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Heading from "../components/Heading";
 import Input from "../components/inputs/Input";
-import { FieldValues, handleSubmit, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import Button from "../components/Button";
 
 const RegisterForm = () => {
     const {isLoading, setIsLoading} = useState(false);
@@ -14,6 +15,11 @@ const RegisterForm = () => {
             password: ''
         }
     })
+
+    const onSubmit:SubmitHandler<FieldValues> = (data) => {
+        setIsLoading(true)
+        console.log(data)
+    }
 
   return (
     <>
@@ -27,6 +33,24 @@ const RegisterForm = () => {
             errors={errors}
             required
         />
+        <Input 
+            id="email" 
+            label="Email" 
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+        />
+        <Input 
+            id="password" 
+            label="Password" 
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+            type="password"
+        />
+        <Button label= {isLoading ? "Loading" : "Sign Up"} onClick={handleSubmit(onSubmit)} />
     </>
   )
 }
