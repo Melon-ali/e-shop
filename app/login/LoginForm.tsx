@@ -10,8 +10,13 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { SafeUser } from "@/types"
 
-const LoginForm = () => {
+interface loginFormProps {
+    currentUser: SafeUser | null;
+}
+
+const LoginForm:React.FC<loginFormProps> = ({ currentUser }) => {
     const [ isLoading, setIsLoading ] = useState(false);
 
     const {register, handleSubmit, formState: {errors}} = useForm<FieldValues>({
@@ -40,6 +45,10 @@ const LoginForm = () => {
                 toast.error(callback.error)
             }
         })
+    };
+
+    if(currentUser){
+        return <p className="text-center">Logged in Redirecting...</p>
     }
 
   return (
