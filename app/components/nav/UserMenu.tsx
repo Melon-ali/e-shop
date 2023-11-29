@@ -28,20 +28,20 @@ const UserMenu:React.FC<UserMenuProps> = ({ currentUser }) => {
                 <AiFillCaretDown />
                 {isOpen && (
                     <div className="absolute rounded-md shadow-md w-[170px] bg-white overflow-hidden right-0 top-12 text-sm flex flex-col cursor-pointer">
-                        {currentUser ? (
+                        {currentUser ?(
                             <div>
-                                <Link href="/orders">
-                                    <MenuItem onClick={toggleOpen}>Your Orders</MenuItem>
-                                </Link>
-                                <Link href="/admin">
-                                    <MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
-                                </Link>
-                                <hr />
-                                <MenuItem onClick={() => {
-                                    toggleOpen();
-                                    signOut()
-                                }}>Logout</MenuItem>
-                            </div>
+                            <Link href="/orders">
+                                <MenuItem onClick={toggleOpen}>Your Orders</MenuItem>
+                            </Link>
+                            <Link href="/admin">
+                                <MenuItem onClick={toggleOpen}>Admin Dashboard</MenuItem>
+                            </Link>
+                            <hr />
+                            <MenuItem onClick={() => {
+                                toggleOpen();
+                                signOut()
+                            }}>Logout</MenuItem>
+                        </div>
                         ): (
                             <div>
                                 <Link href="/login">
@@ -52,8 +52,7 @@ const UserMenu:React.FC<UserMenuProps> = ({ currentUser }) => {
                                 </Link>
                             </div>
                         )}
-                        
-                        
+                           
                     </div>
                 )}
             </div>

@@ -40,6 +40,7 @@ const LoginForm:React.FC<loginFormProps> = ({ currentUser }) => {
                 router.refresh();
                 toast.success("Logged In");
             }
+    
 
             if(callback?.error){
                 toast.error(callback.error)
