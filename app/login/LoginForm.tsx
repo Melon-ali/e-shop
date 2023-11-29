@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import Input from "../components/inputs/Input";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -26,7 +26,14 @@ const LoginForm:React.FC<loginFormProps> = ({ currentUser }) => {
         }
     });
 
-    const router = useRouter()
+    const router = useRouter();
+
+    useEffect(() => {
+        if(currentUser){
+            router.push('/cart');
+            router.refresh();
+        }
+    }, [])
 
     const onSubmit:SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true)
