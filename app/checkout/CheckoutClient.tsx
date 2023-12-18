@@ -30,9 +30,12 @@ const CheckoutClient = () => {
       setLoading(true);
       setError(false);
 
-      fetch("/api/create-payment-intent", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      fetch('/api/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json'
+      
+      
+      },
         body: JSON.stringify({
           items: cartProducts,
           payment_intent_id: paymentIntent,
@@ -80,7 +83,7 @@ const CheckoutClient = () => {
           />
         </Elements>
       )}
-      {loading && <div className="text-center">Loading Checout</div>}
+      {loading && <div className="text-center">Loading Checout...</div>}
       {error && (
         <div className="text-center text-rose-500">Something went wrong</div>
       )}

@@ -57,18 +57,18 @@ model Order{
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-type CartProductType {
+type CartProductType{
   id String
   name String
   description String
   category String
   brand String
-  selectedImg image
+  selectedImg Image
   quantity Int
   price Float
 }
 
-type image{
+type Image{
   color String
   colorCode String
   image String
@@ -78,7 +78,7 @@ type Address{
   city String
   country String
   line1 String
-  line2 String
+  line2 String?
   postal_code String
   state String
 }
