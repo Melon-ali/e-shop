@@ -170,6 +170,11 @@ const AddProductForm = () => {
     });
   };
 
+  const reject = (error: StorageError) => {
+    console.error("Error uploading image", error);
+    throw new Error("Error uploading image");
+  };
+
   const addImageToState = useCallback((value: ImageType) => {
     setImages((prev) => {
       if (!prev) {
