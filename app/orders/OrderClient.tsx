@@ -125,18 +125,7 @@ const OrdersClient: React.FC<OrdersClientProps> = ({ orders }) => {
       width: 200,
       renderCell: (params) => (
         <div className="flex justify-between gap-4 w-full">
-          <ActionBtn
-            icon={MdDeliveryDining}
-            onClick={() => {
-              handleDispatch(params.row.id);
-            }}
-          />
-          <ActionBtn
-            icon={MdDone}
-            onClick={() => {
-              handleDeliver(params.row.id);
-            }}
-          />
+          
           <ActionBtn
             icon={MdRemoveRedEye}
             onClick={() => {
@@ -148,42 +137,11 @@ const OrdersClient: React.FC<OrdersClientProps> = ({ orders }) => {
     },
   ];
 
-  const handleDispatch = useCallback((id: string) => {
-    axios
-      .put("/api/order", {
-        id,
-        deliveryStatus: "dispatched", // Corrected typo here
-      })
-      .then((res) => {
-        toast.success("Order Dispatched");
-        router.refresh();
-      })
-      .catch((err) => {
-        toast.error("Oops! Something went wrong"); // Corrected typo here
-        console.log(err);
-      });
-  }, []);
-
-  const handleDeliver = useCallback((id: string) => {
-    axios
-      .put("/api/order", {
-        id,
-        deliveryStatus: "delivered",
-      })
-      .then((res) => {
-        toast.success("Order Delivered");
-        router.refresh();
-      })
-      .catch((err) => {
-        toast.error("Oops! Something went wrong"); // Corrected typo here
-        console.log(err);
-      });
-  }, []);
 
   return (
     <div className="max-w-[1150px] m-auto text-xl">
       <div className="mb-4 mt-8">
-        <Heading title="Manage Orders" center />
+        <Heading title="Orders" center />
       </div>
       <div style={{ height: 600, width: "100%" }}>
         <DataGrid
