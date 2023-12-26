@@ -62,7 +62,6 @@ model Review{
   rating Int
   comment String
   createDate DateTime @default(now())
-  createAt String
 
   product Product @relation(fields: [productId], references: [id])
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

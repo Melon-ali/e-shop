@@ -30,12 +30,9 @@ const CheckoutClient = () => {
       setLoading(true);
       setError(false);
 
-      fetch('/api/create-payment-intent', {
-        method: 'POST',
-        headers: { 'Content-Type':'application/json'
-      
-      
-      },
+      fetch("/api/create-payment-intent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: cartProducts,
           payment_intent_id: paymentIntent,
@@ -93,7 +90,7 @@ const CheckoutClient = () => {
           <div className="max-w-[220px] w-full">
             <Button
               label="View Yours Orders"
-              onClick={() => router.push("/order")}
+              onClick={() => router.push("/orders")}
             />
           </div>
         </div>
