@@ -11,7 +11,7 @@ interface BarGraphProps{
 
 type GraphData ={
     day: string;
-    data: string;
+    date: string;
     totalAmount: number;
 }
 
