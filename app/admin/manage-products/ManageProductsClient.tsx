@@ -123,6 +123,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         toast.error("Oops! SOmething want wrong");
         console.log(err);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = useCallback(async (id: string, images: any) => {
@@ -154,6 +155,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
         toast.error("Faild to delete product");
         console.log(error);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

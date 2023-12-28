@@ -31,6 +31,7 @@ const SelectColor: React.FC<SelectColorProps> = ({
   const handleFileChange = useCallback((value: File) => {
     setFile(value);
     addImageToState({ ...item, image: value });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleCheck = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +40,7 @@ const SelectColor: React.FC<SelectColorProps> = ({
       setFile(null);
       removeImageFromState(item);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

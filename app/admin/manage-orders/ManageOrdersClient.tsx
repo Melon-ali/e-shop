@@ -162,6 +162,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         toast.error("Oops! Something went wrong"); // Corrected typo here
         console.log(err);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDeliver = useCallback((id: string) => {
@@ -178,6 +179,7 @@ const ManageOrdersClient: React.FC<ManageOrdersClientProps> = ({ orders }) => {
         toast.error("Oops! Something went wrong"); // Corrected typo here
         console.log(err);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

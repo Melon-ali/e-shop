@@ -63,6 +63,7 @@ const ProductDetails:React.FC<ProductDetailsProp> = ({product}) => {
                 setIsProductInCart(true);
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartProducts])
 
     const productRating = product.reviews.reduce(( acc:number, item:any ) => item.rating + acc, 0) / product.reviews.length
@@ -73,6 +74,7 @@ const ProductDetails:React.FC<ProductDetailsProp> = ({product}) => {
                 return {...prev, selectedImg: value}
             })
         }, 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [cartProduct.selectedImg]
     );
 

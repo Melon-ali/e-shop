@@ -35,6 +35,7 @@ const RegisterForm:React.FC<RegisterFormProps> = ({ currentUser }) => {
             router.push("/cart");
             router.refresh();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {

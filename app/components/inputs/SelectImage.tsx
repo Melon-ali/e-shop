@@ -17,6 +17,7 @@ const SelectImage: React.FC<SelectImageProps> = ({
     if (acceptedFiles.length > 0) {
       handleFileChange(acceptedFiles[0]);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
