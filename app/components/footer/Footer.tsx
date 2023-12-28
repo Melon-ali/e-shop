@@ -28,7 +28,7 @@ const Footer = () => {
                     </FooterList>
                     <div className="w-full md:w-1/3 mb-6 md:mb-0">
                         <h3 className="text-base font-bold mb-2">About Us</h3>
-                        <p className="mb-2">At our electronics store. we are dedicated to providing the latest and greatest devices and accessories to our customers. with a wide Selection of Phones, Tvs, Laptops, watches and and Accessories.</p>
+                        <p className="mb-2">At our electronics store. we are dedicated to providing the the latest and greatest devices and accessories to our customers. with a wide Selection of Phones, Tvs, Laptops, watches and and Accessories.</p>
                         <p>&copy; {new Date().getFullYear()} E-Shop. All Rights reserved.</p>
                     </div>
                     <FooterList>
